@@ -29,9 +29,8 @@ y = y_adata.X
 #training GradientBoosting model and testing
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.3, random_state=44)
 params = {
-    "n_estimators": 500,
-    "max_depth": 4,
-    "min_samples_split": 5,
+    "n_estimators": 100,
+    "max_depth": 3,
     "learning_rate": 0.01,
     "loss": "squared_error",
 }
@@ -42,6 +41,5 @@ print("training complete")
 predictions = reg_PRF1.predict(X_test)
 mse = mean_squared_error(y_test.astype('float64'), predictions)
 error = math.sqrt(mse)
-print('Mean Srquared Error:', mse)
 print("root mean square error {}".format(error))
 
